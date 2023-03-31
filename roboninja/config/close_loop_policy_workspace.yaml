@@ -1,0 +1,52 @@
+defaults:
+  - _self_
+  - cut_env: cut_env
+
+
+gpu: 2
+max_epoch: 1000
+
+model:
+  in_channels: 3
+  out_dim: 2
+
+policy:
+  tolerance_range: 0.02
+  funnel_std: 0.04
+
+
+dataset:
+  dir: null
+  expert_dir: 'data/expert'
+  seq_len: 60
+  train_num: 300
+  test_num: 30
+  epoch_range: 50
+  sdf: True
+  tolerance_range: ${policy.tolerance_range}
+  funnel_std_k: ${policy.funnel_std}
+  funnel_std_v: ${policy.funnel_std}
+
+dataloader:
+  batch_size: 32
+  num_workers: 16
+  pin_memory: False
+  shuffle: True
+
+name: close_loop_policy
+
+logging:
+  project: roboninja
+  name: ${name}
+  tags: ["std=${policy.funnel_std}", "tr=${policy.tolerance_range}"]
+  # mode: offline
+
+optimizer:
+  lr: 0.0001
+  weight_decay: 0.000001
+
+hydra:
+  job:
+    override_dirname: ${name}
+  run:
+    dir: data/close_loop_policy/${name}

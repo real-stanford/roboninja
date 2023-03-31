@@ -1,0 +1,23 @@
+defaults:
+  - _self_
+  
+
+terminate_height: 0.0175 # thickness of the bottom
+
+calibration_offset: [0.35, -0.075, 0.0096]
+
+bone_offset: [0, 0.03, 0.005]
+
+robot_ip: '192.168.0.139'
+tcp_offset_pose: [0, 0, 0.087, 0.063, 0, -0.00]
+
+controller:
+  robot_ip: ${robot_ip}
+  tcp_offset_pose: ${tcp_offset_pose}
+  payload_mass: 1
+  payload_cog: [0, -0.05, 0.05]
+  sensor_cfg:
+    ip: '192.168.0.174'
+    port: 23333
+    verbose: True
+    threshold: 1500000

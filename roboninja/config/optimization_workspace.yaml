@@ -1,0 +1,41 @@
+defaults:
+  - _self_
+  - cut_env: cut_env
+
+name: expert
+render_gap: 10 # -1 means no render
+log_wandb: True
+
+n_iters: 300
+horizon_action: 60
+init_action_p: [-0.3, 0.215, 0.5]
+init_action_v: [0.0, 0.0, 0.0]
+
+
+logging:
+  project: roboninja
+  name: ${name}
+  tags: ["${cut_env.bone.name}"]
+
+optim:
+  type: Adam
+  bounds: [-1.0, 1.0]
+  
+  lr_action_p: 5e-2
+  lr_action_v: 1e-2
+
+  # Adam specific
+  beta_1: 0.9
+  beta_2: 0.99
+  epsilon: 1e-8
+
+  # Momentum specific
+  momentum: 0.9
+
+save_info_keys: ['iter', 'comp_actions', 'loss']
+
+hydra:
+  job:
+    override_dirname: ${name}
+  run:
+    dir: data/optimization/${name}

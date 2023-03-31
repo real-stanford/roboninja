@@ -1,0 +1,19 @@
+defaults:
+  - _self_
+  - cut_env: cut_env
+
+init_action_p: [-0.3, 0.215, 0.5] # copy from optimization_workspace.yaml
+
+type: taichi
+
+title: 'Evaluation'
+approach:
+  # - ['RoboNinja', 'eval-adaptive-taichi-ood_False']
+  # - ['NonAdaptive', 'eval-non_adaptive-taichi-ood_False']
+  # - ['Greedy', 'eval-greedy-taichi-ood_False']
+  # - ['NN', 'eval-nn-taichi-ood_False']
+
+  - ['RoboNinja_ood', 'eval-adaptive-taichi-ood_True']
+  - ['NonAdaptive_ood', 'eval-non_adaptive-taichi-ood_True']
+  - ['Greedy_ood', 'eval-greedy-taichi-ood_True']
+  - ['NN_ood', 'eval-nn-taichi-ood_True']

@@ -1,0 +1,74 @@
+defaults:
+  - _self_
+  - cut_env: cut_env
+  - real_env
+
+init_action_p: [-0.3, 0.215, 0.5] # copy from optimization_workspace.yaml
+
+bone_idx_start: 300
+bone_idx_end: 350
+
+type: sim
+# type: taichi
+
+ood: False # True: use noval geometries and the bone_idx_start/end will be automatically changed to 0/50
+
+# type: real
+# bone_idx: 4
+
+wandb: False
+html: True
+taichi_render: False
+
+gpu: 0
+seq_len: 60
+
+n_back: 10
+max_collision: 10
+state_estimation_threshold: 0.3
+
+real_env:
+  duration: 0.5
+  scale: 0.5 # 0.1 / 0.2
+
+  global_rot_center: [0.535, -0.3]
+  global_rot_angle: 0
+
+# to avoid empty attributes, very hacky!
+state_estimation_model: null
+close_loop_policy_model: null
+
+policy:
+  cutting_police: 'adaptive'
+  # cutting_police: 'non_adaptive'
+  # cutting_police: 'greedy'
+  # cutting_police: 'nn'
+
+  expert_dir: 'data/expert'
+  num_train: 300
+  num_test: 50
+
+  min_tolerance: 0
+  max_tolerance: 0.02
+  increase_delta: 0.005
+  decrease_speed: 0.001
+
+  tolerance_range: 0.02
+  funnel_std: 0.04
+
+state_estimation_path: 'data/state_estimation/state_estimation/checkpoints/latest.ckpt'
+close_loop_policy_path: 'data/close_loop_policy/close_loop_policy/checkpoints/latest.ckpt'
+
+name: eval-${policy.cutting_police}-${type}-ood_${ood}
+
+logging:
+  project: roboninja
+  name: ${name}
+  tags: ["${policy.cutting_police}"]
+  # mode: offline
+  
+hydra:
+  job:
+    override_dirname: ${name}
+  run:
+    dir: data/eval/${name}

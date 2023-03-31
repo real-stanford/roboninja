@@ -1,0 +1,17 @@
+bone_types:
+  - ['2kps', 10]
+  - ['4kps', 10]
+  - ['triangle', 10]
+  - ['rectangle', 10]
+  - ['ellipse', 10]
+  
+
+bone_thichness: 0.15
+
+name: bone_generation_ood
+
+hydra:
+  job:
+    override_dirname: ${name}
+  run:
+    dir: data/${name}

@@ -1,0 +1,7 @@
+bone:
+  name: bone_0
+  mesh_root: data/bone_generation
+  sdf_res: 256
+  pos: [0.5, 0.1, 0.5]
+  euler: [0.0, 0.0, 90.0]
+  scale: [0.15, 0.15, 0.1]

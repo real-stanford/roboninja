@@ -1,0 +1,10 @@
+defaults:
+  - _self_
+  - bone
+  - knife
+  - loss
+  - render
+
+gpu_type: 1 # gpu_type = floor(cuda_memory / 12); 12G ==> 1; 24G ==> 2; 48G ==> 4
+cuda_id: 0
+horizon: 61

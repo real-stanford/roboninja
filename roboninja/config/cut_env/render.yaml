@@ -1,0 +1,12 @@
+render:
+  show_bone: True
+  mode: False
+  res: [640, 640]
+  camera_pos: [0.5, 0.5, -0.4]
+  camera_lookat: [0.5, 0.2, 0.5]
+  fov: 30
+  lights:
+    - pos: [0.0, 1.0, -0.5]
+      color: [0.6, 0.6, 0.6]
+    - pos: [1.0, 1.0, -0.5]
+      color: [0.3, 0.3, 0.3]

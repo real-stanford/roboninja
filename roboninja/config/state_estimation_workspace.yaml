@@ -1,0 +1,38 @@
+defaults:
+  - _self_
+  - cut_env: cut_env
+
+name: state_estimation
+
+gpu: 0
+max_epoch: 2000
+
+model:
+  in_channels: 1
+
+dataset:
+  dir: null
+  max_num_pts: 10
+  train_num: 300
+  test_num: 50
+
+dataloader:
+  batch_size: 32
+  num_workers: 8
+  pin_memory: False
+  shuffle: True
+
+logging:
+  project: roboninja
+  name: ${name}
+  tags: ["${name}"]
+
+optimizer:
+  lr: 0.0001
+  weight_decay: 0.000001
+
+hydra:
+  job:
+    override_dirname: ${name}
+  run:
+    dir: data/state_estimation/${name}

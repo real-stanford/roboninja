@@ -1,0 +1,11 @@
+loss_weight:
+  cut: 10.0
+  collision: 200000.0
+  work: 1.5
+  rotation: 3.0
+  move: 0.1
+  # rotation and move are not necessary!
+  # That's why we never mention them in our main paper.
+  # They only affect the knife before having contact with the object
+  # to make sure the knife won't have strange behavior.
+  # The other three kinds of loss have no constraints to th eknife pose without contacts.

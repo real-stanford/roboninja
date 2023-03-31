@@ -1,0 +1,43 @@
+name: roboninja
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - tqdm=4.64.1
+  - scipy=1.9.1
+  - cudatoolkit=11.3
+  - pytorch=1.12.1
+  - torchvision=0.13.1
+  - imageio=2.19.3
+  - matplotlib=3.5.2
+  - numpy=1.23.3
+  - pip=22.2.2
+  - pybind11=2.9.2
+  - python=3.9
+  - scikit-image=0.19.2
+  - wandb=0.13.4
+  - numba=0.53.1
+  - threadpoolctl=2.2.0
+  - imageio-ffmpeg=0.4.7
+  - ffmpeg=5.1.2
+  - moviepy=1.0.3
+  - igl=2.2.1
+  - ipdb=0.13.9
+  - opencv=4.6.0
+  - av=10.0.0
+  - dominate=2.7.0
+  - pip:
+    - h5py==3.7.0
+    - ray==2.0.1
+    - trimesh==3.15.8
+    - mapbox_earcut==1.0.1
+    - ur_rtde==1.5.5
+    - taichi==1.3.0
+    - shapely==2.0.0
+    - hydra-core==1.3.1
+    - ipykernel==6.19.4
+    - open3d==0.16.0
+    - pyrealsense2==2.53.1.4623
+    - stable-baselines3==1.6.2
+    - atomics==1.0.2

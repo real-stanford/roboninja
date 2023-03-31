@@ -1,0 +1,11 @@
+n_bone: 350
+n_kps: 3
+bone_thichness: 0.15
+
+name: bone_generation
+
+hydra:
+  job:
+    override_dirname: ${name}
+  run:
+    dir: data/${name}
