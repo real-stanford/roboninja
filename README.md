@@ -1,6 +1,4 @@
 # RoboNinja: Learning an Adaptive Cutting Policy for Multi-Material Objects
-
-
 [Zhenjia Xu](http://www.zhenjiaxu.com/)<sup>1</sup>,
 [Zhou Xian](https://www.zhou-xian.com/)<sup>2</sup>,
 [Xingyu Lin](https://xingyu-lin.github.io/)<sup>3</sup>,
@@ -15,6 +13,9 @@ RSS 2023
 
 ### [Project Page](https://roboninja.cs.columbia.edu/) | [Video](https://youtu.be/SyEAP_jlgSQ) | [arXiv](https://arxiv.org/abs/2302.11553)
 
+This repository contains code for training and evaluating RoboNinja in both simulation and real-world settings.
+
+![](assets/teaser.png)
 
 ## Installation
 We recommend [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge) instead of the standard anaconda distribution for faster installation: 
