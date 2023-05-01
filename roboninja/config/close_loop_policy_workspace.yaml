@@ -11,8 +11,8 @@ model:
   out_dim: 2
 
 policy:
-  tolerance_range: 0.02
-  funnel_std: 0.04
+  tolerance_range: 0.02   # change to 0 for non-adaptive
+  funnel_std: 0.04        # change to 0 for non-adaptive
 
 
 dataset:

@@ -8,8 +8,8 @@ init_action_p: [-0.3, 0.215, 0.5] # copy from optimization_workspace.yaml
 bone_idx_start: 300
 bone_idx_end: 350
 
-type: sim
-# type: taichi
+# type: sim
+type: taichi
 
 ood: False # True: use noval geometries and the bone_idx_start/end will be automatically changed to 0/50
 
